@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,11 @@ use App\Http\Controllers\ProductController;
 Route::controller(MarketplaceController::class)->group(function () {
     Route::get('/marketplace', 'index')->name('marketplace');
     Route::get('/product/{slug_product}', 'productDetails')->name('product');
+});
+
+//Route Dashboard Customer
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('/customer', 'index')->name('d_customer');
 });
 
 //Route Login

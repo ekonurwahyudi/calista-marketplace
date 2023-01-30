@@ -13,7 +13,7 @@
                         <img src="{{ url('assets/images/popup/p-bg-02.jpg') }}" alt="popup-bg" />
                     </div>
                     <form method="POST" action="{{ route('login') }}" class="form__wrapper">
-                        {{ csrf_field() }}
+                        @csrf
                         <div class="popup__title">
                             <h2>Login</h2>
                         </div>
@@ -44,8 +44,12 @@
                                 <a href="#" data-bs-target="#signup" data-bs-toggle="modal" data-bs-dismiss="modal">Sign
                                     up</a>
                             </div>
-                            <a href="#" data-bs-target="#forget" data-bs-toggle="modal" data-bs-dismiss="modal">Forgot
-                                Password?</a>
+                            @if (Route::has('password.request'))
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                            @endif
                         </div>
                     </form>
                 </div>

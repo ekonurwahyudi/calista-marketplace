@@ -2,7 +2,7 @@
 <header class="header header-sticky">
     <div class="container">
         <!-- Header Top Start -->
-        <div class="header__top" style="padding-top: 0px; padding-bottom: 0px;">
+        <div class="header__top">
             <div class="header__left">
                 <!-- Header Toggle Start -->
                 <div class="header__toggle d-lg-none">
@@ -26,7 +26,7 @@
                             </select>
                         </div>
                         <input type="search" class="form-control" name="search"
-                            placeholder="Mau kalibrasi apa hari ini? .." />
+                            placeholder="What are you looking for..." />
                         <button type="submit">
                             <img src="{{ url('assets/images/search.png') }}" alt="search" />
                         </button>
@@ -52,8 +52,16 @@
                         </li>
                     </ul>
                 </div>
+                <ul class="meta__item">
+                    <li>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#login">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Sign in</span>
+                        </a>
+                    </li>
+                </ul>
                 <div class="miniCart">
-                    <div class="header__cart" style="padding-right: 15px;">
+                    <div class="header__cart">
                         <a href="#" class="cart__btn">
                             <div class="cart__btn-img">
                                 <img src="{{ url('assets/images/cart-icon.png') }}" alt="cart-icon" />
@@ -63,42 +71,6 @@
                         </a>
                     </div>
                 </div>
-                <ul class="meta__item ml-3 mt-2">
-                    <li>
-                        @if (Route::has('login'))
-                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                            @auth
-                            <div class="avatar__dropdown">
-                                <a href="#" class="avatar__profile">
-                                    <img src="{{ url('assets/images/avatar/profile.png') }}" alt="avatar-img" />
-                                </a>
-                                <ul class="list">
-                                    <li class="active"><a href="{{ route('d_customer') }}">My Account</a></li>
-                                    <li><a href="order-history.html">Orders & Reordering</a></li>
-                                    <li><a href="tracking.html">Order Tracking</a></li>
-                                    <li><a href="wishlist.html">My Wishlist</a></li>
-                                    <li><a href="#">Settings</a></li>
-                                    <li style="padding-left: 0px;padding-top: 4px;">
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <x-dropdown-link :href="route('logout')"
-                                                onclick="event.preventDefault(); this.closest('form').submit();">
-                                                {{ __('Log Out') }}
-                                            </x-dropdown-link>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                            @else
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#login">
-                                <i class="fa-solid fa-user-plus"></i>
-                                <span>Sign in</span>
-                            </a>
-                            @endauth
-                        </div>
-                        @endif
-                    </li>
-                </ul>
             </div>
             <!-- Header Top End -->
         </div>

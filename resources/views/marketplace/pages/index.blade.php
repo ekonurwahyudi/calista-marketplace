@@ -1,5 +1,12 @@
 @extends('marketplace.layouts.app')
 @section('title')
+<title>Calista - No. 1 Marketplace for Calibration & Testing &amp; in Indonesia.</title>
+<meta name="keywords"
+    content="Telkom Calibration, Lab Kalibrasi, Jasa Kalibrasi Indonesia, Lab kalibrasi di jakarat, Lab Kalibrasi di Indonesia, Jasa Kalibrasi, Lab kalibrasi, KAN ISO 17025" />
+<meta name="description"
+    content="Calista adalah inovasi Laboratory Management platform, terutama untuk Lab Kalibrasi dan Lab Uji. Calista menyediakan information media, operation tools, monev, data processing/analytics untuk peningkatan CX. Dalam perjalanannya, saat ini Calista dikembangkan menjadi sebuah MARKETPLACE layanan Kalibrasi & Pengujian, digitalisasi ISO/IEC 17025 yang belum ada di Indonesia sebelumnya." />
+<meta name="author" content="Calista Indonesia" />
+<link rel="shortcut icon" href="{{ url('assets/images/favicon.png') }}" type="image/f-icon" />
 @endsection
 
 @section('content')
@@ -1352,7 +1359,4 @@
     </div>
 </section>
 <!-- Trending Section End -->
-<!-- Scroll-top -->
-<button class="scroll-top scroll-to-target" data-target="html">scroll</button>
-<!-- Scroll-top-end-->
 @endsection

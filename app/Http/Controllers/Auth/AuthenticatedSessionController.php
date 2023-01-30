@@ -36,7 +36,8 @@ class AuthenticatedSessionController extends Controller
         if($user->hasRole('admin')){
             return redirect()->route('dahboardlab');
         }else{
-            return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->route('d_customer');
+            // return redirect()->intended(RouteServiceProvider::HOME);
         }
     }
 
